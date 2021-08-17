@@ -2,7 +2,7 @@
   <section class="cart">
     <h2 class="cart-title">Your Cart</h2>
     <h3 class="cart-subtitle">
-      Total Amount: <BaseBandge>${{ cart.total }}</BaseBandge>
+      Total Amount: <BaseBandge mode="elegant">${{ cart.total }}</BaseBandge>
     </h3>
   </section>
 </template>

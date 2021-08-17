@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Cards from './pages/cards/Cards.vue';
-import Cart from './pages/cart/Cart.vue';
+import UserCart from './pages/UserCart.vue';
+import ProductsList from './pages/ProductsList.vue';
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', redirect: '/cards' },
-    { path: '/cards', name: 'cards', component: Cards },
-    { path: '/cart', name: 'cart', component: Cart }
+    { path: '/', redirect: '/products' },
+    { path: '/cart', name: 'cart', component: UserCart },
+    { path: '/products', name: 'products', component: ProductsList }
   ],
   linkActiveClass: 'active'
 });
