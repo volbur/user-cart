@@ -12,7 +12,7 @@
           >Cart</router-link
         >
       </nav>
-      <span class="badge">{{ cart.total }}</span>
+      <BaseBandge class="total-price">{{ cart.total }}</BaseBandge>
     </div>
     <BaseButton @click="login" v-if="!isLoggedIn" mode="flat">Login</BaseButton>
     <BaseButton @click="logout" v-if="isLoggedIn" mode="flat"
@@ -74,11 +74,7 @@ header {
   color: #45006d;
 }
 
-.badge {
+.total-price {
   margin-left: 10px;
-  padding: 5px 20px;
-  border-radius: 20px;
-  background-color: #45006d;
-  color: #fff;
 }
 </style>
