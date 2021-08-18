@@ -17,7 +17,11 @@ export default {
   components: {
     ProductsItem,
   },
-  inject: ['products'],
+  computed: {
+    products() {
+      return this.$store.getters['products/products'];
+    },
+  },
 };
 </script>
 

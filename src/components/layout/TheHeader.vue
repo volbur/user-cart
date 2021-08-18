@@ -12,7 +12,7 @@
           >Cart</router-link
         >
       </nav>
-      <BaseBandge mode="elegant">{{ cart.total }}</BaseBandge>
+      <BaseBandge mode="elegant">{{ cart }}</BaseBandge>
     </div>
     <BaseButton @click="login" v-if="!isLoggedIn" mode="flat">Login</BaseButton>
     <BaseButton @click="logout" v-if="isLoggedIn" mode="flat"
@@ -23,7 +23,22 @@
 
 <script>
 export default {
-  inject: ['isLoggedIn', 'cart', 'login', 'logout'],
+  computed: {
+    cart() {
+      return this.$store.getters['cart/quantity'];
+    },
+    isLoggedIn() {
+      return this.$store.getters.isLoggedIn;
+    }
+  },
+  methods: {
+    login() {
+      this.$store.dispatch('login');
+    },
+    logout() {
+      this.$store.dispatch('logout');
+    }
+  }
 };
 </script>
 

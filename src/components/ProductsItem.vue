@@ -13,7 +13,9 @@
       </div>
     </div>
     <div class="products-item__actions">
-      <BaseButton class="products-item__btn">Add to Cart</BaseButton>
+      <BaseButton @click="addToCart" class="products-item__btn"
+        >Add to Cart</BaseButton
+      >
     </div>
   </section>
 </template>
@@ -21,6 +23,13 @@
 <script>
 export default {
   props: ['product'],
+  methods: {
+    addToCart() {
+      this.$store.dispatch('cart/addToCart', {
+        id: this.product.id,
+      });
+    },
+  },
 };
 </script>
 
